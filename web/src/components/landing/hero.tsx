@@ -73,7 +73,7 @@ export default function Hero() {
 
             {/* Clouds Section → 2 Cols */}
             <div
-                className="relative flex h-[50vh] overflow-hidden "
+                className="relative flex h-[80vh] lg:h-[50vh] overflow-hidden "
                 id="wth"
             >
                 {/* LEFT column */}
@@ -98,8 +98,9 @@ export default function Hero() {
 
                 <motion.h1
                     className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bowlby text-primary text-stroke"
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
+                    
                     transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
                     viewport={{ amount: 0.7 }}
                 >
