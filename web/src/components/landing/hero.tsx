@@ -11,8 +11,8 @@ export default function Hero() {
 
     // LEFT SCROLL
     const { scrollYProgress: leftScroll } = useScroll({
-        target: leftRef,
-        offset: ["start 75%", "75% start"],
+      target: leftRef,
+      offset: ["start 75%", "75% start"],
     });
 
     // stair effect: outer (less), inner (more)
@@ -40,7 +40,7 @@ export default function Hero() {
             <div className="relative flex h-screen justify-center bg-[url('/assets/what-up/background.png')] bg-cover bg-center">
                 <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary text-stroke text-stroke-fill-primary">
                     <TextEffect
-                        className="text-7xl md:text-8xl"
+                        className="text-5xl md:text-8xl mb-2"
                         as="h1"
                         preset="slide"
                         delay={0.5}
@@ -48,7 +48,7 @@ export default function Hero() {
                         Convivial Futures
                     </TextEffect>
                     <TextEffect
-                        className="text-xl md:text-3xl"
+                        className="text-lg md:text-3xl"
                         as="h2"
                         preset="slide"
                         delay={0.5}
