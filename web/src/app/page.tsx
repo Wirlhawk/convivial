@@ -1,6 +1,7 @@
 import { RevealLinks } from "@/components/flip-link";
 import About from "@/components/landing/about";
 import CurveText from "@/components/landing/curve-text";
+import EventList from "@/components/landing/event-list";
 import Hero from "@/components/landing/hero";
 
 export default function Home() {
@@ -9,9 +10,8 @@ export default function Home() {
             <Hero />
             <About />
             <CurveText />
-            <RevealLinks/>
-            <div className="h-[200vh] bg-red-400">
-            </div>
+            <EventList/>
+            <div className="h-[200vh] bg-red-400"></div>
         </>
     );
 }

@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Bowlby_One, Inter } from "next/font/google";
 import Navbar from "@/components/navbar/navbar";
+import SmoothScroll from "@/components/provider/smooth-scroll";
 
 const BowlbyOne = Bowlby_One({
     variable: "--font-bowlby",
@@ -31,7 +32,7 @@ export default function RootLayout({
                 className={`${inter.className} ${BowlbyOne.variable} antialiased`}
             >
                 <Navbar />
-                {children}
+                <SmoothScroll>{children}</SmoothScroll>
             </body>
         </html>
     );

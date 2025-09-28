@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/ui/text-effect";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import CustomText from "../custom-text";
 
 export default function Hero() {
     const leftRef = useRef(null);
@@ -11,16 +12,23 @@ export default function Hero() {
 
     // LEFT SCROLL
     const { scrollYProgress: leftScroll } = useScroll({
-      target: leftRef,
-      offset: ["start 75%", "75% start"],
+        target: leftRef,
+        offset: ["start 75%", "75% start"],
     });
 
     // stair effect: outer (less), inner (more)
-    const left1X = useTransform(leftScroll, [0, 1], [0, -350]); // outer
-    const left1Y = useTransform(leftScroll, [0, 1], [0, -40]);
+    const left1X = useTransform(leftScroll, [0, 1], [0, -600]); // outer
+    const left1Y = useTransform(leftScroll, [0, 1], [0, -80]);
 
-    const left2X = useTransform(leftScroll, [0, 1], [0, -180]); // mid
+    const left2X = useTransform(leftScroll, [0, 1], [0, -300]); // mid
     const left2Y = useTransform(leftScroll, [0, 1], [0, -70]);
+
+    const { scrollYProgress: textScroll } = useScroll({
+        target: leftRef,
+        offset: ["start end", "end start"],
+    });
+
+    const textScale = useTransform(textScroll, [0, 1], [1, 1.5]);
 
     // RIGHT SCROLL
     const { scrollYProgress: rightScroll } = useScroll({
@@ -28,14 +36,14 @@ export default function Hero() {
         offset: ["start 75%", "75% start"],
     });
 
-    const right1X = useTransform(rightScroll, [0, 1], [0, 350]); // outer
-    const right1Y = useTransform(rightScroll, [0, 1], [0, -40]);
+    const right1X = useTransform(rightScroll, [0, 1], [0, 600]); // outer
+    const right1Y = useTransform(rightScroll, [0, 1], [0, -80]);
 
-    const right2X = useTransform(rightScroll, [0, 1], [0, 180]); // mid
+    const right2X = useTransform(rightScroll, [0, 1], [0, 300]); // mid
     const right2Y = useTransform(rightScroll, [0, 1], [0, 70]);
 
     return (
-        <section className="flex flex-col">
+        <section className="flex flex-col relative">
             {/* Hero */}
             <div className="relative flex h-screen justify-center bg-[url('/assets/what-up/background.png')] bg-cover bg-center">
                 <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary text-stroke text-stroke-fill-primary">
@@ -71,60 +79,59 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            {/* Clouds Section → 2 Cols */}
-            <div
-                className="relative flex h-[80vh] lg:h-[50vh] overflow-hidden "
-                id="wth"
-            >
-                {/* LEFT column */}
-                <div ref={leftRef} className="relative flex-1">
-                    {/* outer (less movement) */}
-                    <motion.img
-                        src="/assets/what-up/cloud_4.png"
-                        alt=""
-                        className="absolute top-8 left-0 sm:left-10 w-[35rem]"
-                        style={{ x: left1X, y: left1Y }}
-                    />
-                    {/* mid */}
-                    <motion.img
-                        src="/assets/what-up/cloud_3.png"
-                        alt=""
-                        className="absolute top-20 left-0 sm:left-50 w-[30rem]"
-                        style={{ x: left2X, y: left2Y }}
-                    />
-                </div>
-
-              
-
+            <div className="h-screen  relative overflow-clip pb-5">
                 <motion.h1
-                    className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center text-5xl font-bowlby text-primary text-stroke"
-                    initial={{ opacity: 0, y: 30 }}
+                    className="sticky top-1/2 z-10  text-center text-2xl sm:text-4xl font-bowlby text-primary text-stroke mt-30 "
+                    initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                    viewport={{ amount: 0.7 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ amount: 0.7, once: true }}
+                    style={{ scale: textScale }}
                 >
-                    Scroll Down
+                    What Is This
+                    <br className="sm:hidden" /> All About?
                 </motion.h1>
 
-                {/* RIGHT column */}
-                <div ref={rightRef} className="relative flex-1">
-                    {/* outer (less movement) */}
-                    <motion.img
-                        src="/assets/what-up/cloud_4.png"
-                        alt=""
-                        className="absolute top-8 right-0 sm:right-10 w-[35rem]"
-                        style={{ x: right1X, y: right1Y }}
-                    />
-                    {/* mid */}
-                    <motion.img
-                        src="/assets/what-up/cloud_3.png"
-                        alt=""
-                        className="absolute top-20 right-0 sm:right-50 w-[30rem]"
-                        style={{ x: right2X, y: right2Y }}
-                    />
-                    {/* inner (most sensitive) */}
-                </div>
+
+                {/* LEFT column */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="flex"
+                >
+                    <div ref={leftRef} className="relative flex-1">
+                        <motion.img
+                            src="/assets/what-up/cloud_4.png"
+                            alt=""
+                            className="absolute top-8 left-0 sm:left-10 w-[35rem]"
+                            style={{ x: left1X, y: left1Y }}
+                        />
+                        <motion.img
+                            src="/assets/what-up/cloud_3.png"
+                            alt=""
+                            className="absolute top-10 left-0 sm:left-50 w-[30rem]"
+                            style={{ x: left2X, y: left2Y }}
+                        />
+                    </div>
+
+                    {/* RIGHT column */}
+                    <div ref={rightRef} className="relative flex-1">
+                        <motion.img
+                            src="/assets/what-up/cloud_4.png"
+                            alt=""
+                            className="absolute top-8 right-0 sm:right-10 w-[35rem]"
+                            style={{ x: right1X, y: right1Y }}
+                        />
+                        <motion.img
+                            src="/assets/what-up/cloud_3.png"
+                            alt=""
+                            className="absolute top-10 right-0 sm:right-50 w-[30rem]"
+                            style={{ x: right2X, y: right2Y }}
+                        />
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

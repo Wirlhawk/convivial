@@ -1,7 +1,7 @@
 // components/TextPathScroll.tsx
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function TextPathScroll() {
@@ -9,7 +9,7 @@ export default function TextPathScroll() {
   const text = useRef<SVGTextPathElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["50% end", "50% start"],
+    offset: ["start end", "50% start"],
   });
 
   useEffect(() => {
@@ -20,20 +20,23 @@ export default function TextPathScroll() {
   }, [scrollYProgress]);
 
   return (
-    <div ref={container} >
-      <svg className="w-full py-30" viewBox="0 0 250 90">
+    <div ref={container} className="h-[200vh] aboslute" >
+    <div className="flex justify-center items-center sticky top-1/2 -translate-y-1/2">
+      <svg className="w-full pt-30" viewBox="0 0 250 90">
         <path
-          id="curve"
-          fill="none"
-          // stroke="black"
-          d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
+        id="curve"
+        fill="none"
+        // stroke="black"
+        d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
         />
         <text className="text-sm font-bowlby tracking-widest font-light">
-          <textPath href="#curve" startOffset={"-100%"} ref={text}>
-            Convivial Futures
-          </textPath>
+        <textPath href="#curve" startOffset={"-100"} ref={text}>
+          Convivial Futures
+        </textPath>
         </text>
       </svg>
+    </div>
+    
 
       {/* <Logos scrollProgress={scrollYProgress} /> */}
     </div>
