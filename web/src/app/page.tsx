@@ -10,7 +10,6 @@ export default function Home() {
             <About />
             <CurveText />
             <EventList/>
-            <div className="h-[200vh] bg-red-400"></div>
         </>
     );
 }

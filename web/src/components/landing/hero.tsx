@@ -46,7 +46,7 @@ export default function Hero() {
         <section className="flex flex-col relative">
             {/* Hero */}
             <div className="relative flex h-screen justify-center bg-[url('/assets/what-up/background.png')] bg-cover bg-center">
-                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary text-stroke text-stroke-fill-primary">
+                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary ">
                     <TextEffect
                         className="text-5xl md:text-8xl mb-2"
                         as="h1"
@@ -81,7 +81,7 @@ export default function Hero() {
 
             <div className="h-screen  relative overflow-clip pb-5">
                 <motion.h1
-                    className="sticky top-1/2 z-10  text-center text-2xl sm:text-4xl font-bowlby text-primary text-stroke mt-30 "
+                    className="sticky top-1/2 z-10  text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 "
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

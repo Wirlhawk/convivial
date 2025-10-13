@@ -20,7 +20,7 @@ const EventList = () => {
                         alt=""
                         className="absolute w-3/4 right-0 top-1/2 z-0"
                     />
-                    <h1 className="text-6xl font-bowlby tracking-wide relative z-10 text-primary text-stroke">
+                    <h1 className="text-6xl font-bowlby tracking-wide relative z-10 text-primary ">
                         What <br /> We've <br /> Done
                     </h1>
                 </div>
