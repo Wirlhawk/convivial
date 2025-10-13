@@ -7,9 +7,9 @@ import { useEffect, useState } from 'react';
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-    { href: '#', label: 'What Up!' },
-    { href: '#', label: 'Wth Is This!' },
-    { href: '#', label: 'The Ninjas' },
+    { href: '/', label: 'Wth Is This!' },
+    { href: '/what-up', label: 'What Up!' },
+    { href: '/the-ninjas', label: 'The Ninjas' },
 ];
 
 export default function Navbar() {
@@ -102,7 +102,7 @@ export default function Navbar() {
                     </NavigationMenu>
                     <div className="flex items-center gap-2">
                         <Button asChild size="sm" className="bg-accent text-sm font-bold">
-                            <a href="#">Collaborate Here</a>
+                            <a href="/collaborate">Collaborate Here</a>
                         </Button>
                     </div>
                 </div>

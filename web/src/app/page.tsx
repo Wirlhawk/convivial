@@ -1,4 +1,3 @@
-import { RevealLinks } from "@/components/flip-link";
 import About from "@/components/landing/about";
 import CurveText from "@/components/landing/curve-text";
 import EventList from "@/components/landing/event-list";
