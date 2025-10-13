@@ -2,16 +2,13 @@
 
 import { useState } from "react";
 import PostDialog from "./post-dialog";
+import { usePosts } from "@/hooks";
 
 const EventList = () => {
+    const { data: posts } = usePosts();
+    
     const [selectedPost, setSelectedPost] = useState<any>(null);
 
-    const posts = Array.from({ length: 5 }).map((_, i) => ({
-        id: i + 1,
-        title: `Festival Floral Wonderland ${i + 1}`,
-        body: "A beautiful event celebrating the art of floral design and creativity.",
-        image: `/assets/ninjas/1.png`, // change to your actual paths
-    }));
 
     return (
         <section className="min-h-screen py-20 px-4 sm:px-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-16 relative">
@@ -31,7 +28,7 @@ const EventList = () => {
 
             {/* Right section — post titles */}
             <div className="sm:col-span-2 col-span-1 order-1 sm:order-2 h-[200vh] flex flex-col pt-5 gap-10">
-                {posts.map((post) => (
+                {posts?.map((post) => (
                     <p
                         key={post.id}
                         onClick={() => setSelectedPost(post)}

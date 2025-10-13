@@ -1,23 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "teams",
+  "collectionName": "abouts",
   "info": {
-    "singularName": "team",
-    "pluralName": "teams",
-    "displayName": "team"
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "about"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "role": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
-    "avatar": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

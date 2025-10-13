@@ -22,7 +22,7 @@ export default function TeamCard({ name, role, avatar, bio }: TeamCardProps) {
             <Card className="relative border-3 border-black rounded-2xl gap-2">
                 <CardHeader className="pb-2">
                     <div className="flex justify-center">
-                        <Image
+                        <img
                             src={avatar}
                             width={200}
                             height={200}

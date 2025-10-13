@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ActivitiesCard from "./activities-card";
+import { useAbout } from "@/hooks";
 
 const activities = [
     {
@@ -28,9 +29,11 @@ const activities = [
 ];
 
 export default function Activites() {
+    const { data: abouts } = useAbout();
+
     return (
         <div className="flex flex-col max-w-7xl mx-auto px-6 py-20 gap-20">
-            {activities.map((activity, index) => (
+            {abouts?.map((activity, index) => (
                 <motion.div
                     key={index}
                     className={`flex items-center gap-8 ${
@@ -44,10 +47,10 @@ export default function Activites() {
                     <ActivitiesCard
                         title={activity.title}
                         description={activity.description}
-                        color={activity.color}
+                        color={index % 2 === 1 ? "bg-accent" : "bg-secondary"}
                     />
                     <motion.img
-                        src={activity.image}
+                        src={activity.image.url!}
                         alt=""
                         className="w-full max-w-xl "
                         initial={{ opacity: 0, scale: 0.9 }}

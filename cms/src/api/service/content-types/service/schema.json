@@ -14,18 +14,18 @@
     "title": {
       "type": "string"
     },
-    "icon": {
+    "description": {
+      "type": "text"
+    },
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
-    },
-    "description": {
-      "type": "text"
     }
   }
 }

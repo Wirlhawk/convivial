@@ -1,0 +1,5 @@
+/**
+ * sss service
+ */
+
+export default () => ({});
