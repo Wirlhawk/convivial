@@ -79,8 +79,8 @@ export default function Navbar() {
                         </PopoverContent>
                     </Popover>
                     {/* Logo */}
-                    <a href="#" className="font-bowlby text-2xl text-foreground">
-                        Logo
+                    <a href="#" className="font-bowlby text-2xl text-foreground max-sm:hidden">
+                        Convivial 
                     </a>
                 </div>
                 {/* Right side - Navigation */}
