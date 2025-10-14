@@ -15,7 +15,7 @@ export default function ({
     backgroundColor?: string;
 }) {
     return (
-        <div className="relative max-w-sm mx-auto mb-5 h-fit">
+        <div className="relative w-md md:w-sm mx-auto mb-5 h-fit">
             {/* bottom "shadow card" */}
             <div
                 className={cn(

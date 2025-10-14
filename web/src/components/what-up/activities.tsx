@@ -36,7 +36,7 @@ export default function Activites() {
             {abouts?.map((activity, index) => (
                 <motion.div
                     key={index}
-                    className={`flex items-center gap-8 ${
+                    className={`flex max-md:flex-col-reverse items-center gap-8 ${
                         index % 2 === 1 ? "flex-row-reverse" : ""
                     }`}
                     initial={{ opacity: 0, y: 50 }}

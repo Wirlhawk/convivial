@@ -20,7 +20,7 @@ const item = {
 
 export default function Hero() {
     return (
-        <section className=" grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto px-6 ">
+        <section className=" grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto px-6 max-w-md:mt-32 ">
             {/* Left */}
             <div className="flex items-center">
                 <motion.h1

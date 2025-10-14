@@ -7,6 +7,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { Post } from "@/lib/api";
+import { ScrollArea } from "../ui/scroll-area";
 
 interface PostDialogProps {
     open: boolean;
@@ -38,30 +39,32 @@ export default function PostDialog({
                     />
 
                     {/* Foreground card */}
-                    <article className="relative rounded-[24px] border-[3px] border-foreground bg-card text-card-foreground shadow-[0_6px_0_0_var(--color-foreground)] overflow-hidden">
-                        <header className="px-8 pt-10 pb-4 text-center">
-                            <DialogHeader className="p-0">
-                                <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby">
-                                    {post.title}
-                                </DialogTitle>
-                            </DialogHeader>
-                        </header>
+                    <ScrollArea className="flex max-h-full flex-col overflow-hidden">
+                        <article className="relative rounded-[24px] border-[3px] border-foreground bg-card text-card-foreground shadow-[0_6px_0_0_var(--color-foreground)] overflow-hidden">
+                            <header className="px-8 pt-10 pb-4 text-center">
+                                <DialogHeader className="p-0">
+                                    <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby">
+                                        {post.title}
+                                    </DialogTitle>
+                                </DialogHeader>
+                            </header>
 
-                        {/* Full-width hero image between header and body */}
-                        <figure className="w-full border-b-[3px] border-foreground">
-                            <img
-                                src={post.image.url!}
-                                alt={`${post.title} image`}
-                                className="block w-full h-44 object-cover"
-                            />
-                        </figure>
+                            {/* Full-width hero image between header and body */}
+                            <figure className="w-full border-b-[3px] border-foreground">
+                                <img
+                                    src={post.image.url!}
+                                    alt={`${post.title} image`}
+                                    className="block w-full h-44 object-cover"
+                                />
+                            </figure>
 
-                        <div className="px-10 pt-6 pb-16">
-                            <p className="text-pretty leading-relaxed text-foreground/80">
-                                {post.description}
-                            </p>
-                        </div>
-                    </article>
+                            <div className="px-10 pt-6 pb-16">
+                                <p className="text-pretty leading-relaxed text-foreground/80">
+                                    {post.description}
+                                </p>
+                            </div>
+                        </article>
+                    </ScrollArea>
                 </div>
             </DialogContent>
         </Dialog>

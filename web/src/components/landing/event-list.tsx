@@ -3,12 +3,23 @@
 import { useState } from "react";
 import PostDialog from "./post-dialog";
 import { usePosts } from "@/hooks";
+import { Post } from "@/lib/api";
+import ScrollableDialog from "./scrollabe-dialog";
+
+const posts: Post[] = [
+    {
+        id: 1,
+        title: "Event 1 Lorem ipsum sit amet consectur adiscipcing",
+        description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex facilis modi et molestias, debitis, vitae voluptates consequatur numquam reiciendis officiis fugiat iste doloribus ducimus omnis ut magni laudantium, amet deleniti Mollitia error quam dignissimos deserunt magnam quia quae rerum! Temporibus recusandae, tenetur consequatur eius eum ipsam quo assumenda velit explicabo autem itaque est beatae soluta consectetur, sapiente, placeat enim quiQuasi, eveniet quo. Soluta quam assumenda nobis quo voluptatum, ratione labore harum cumque incidunt inventore delectus in accusamus architecto minima vitae non molestiae corrupti. Enim architecto veritatis sapiente soluta repellendus, quam dignissimos deserunt magnam quia quae rerum! Temporibus recusandae, tenetur consequatur eius eum ipsam quo assumenda velit explicabo autem itaque est beatae soluta consectetur, sapiente, placeat enim quiQuasi, eveniet quo. Soluta quam assumenda nobis quo voluptatum, ratione labore harum cumque incidunt inventore delectus in accusamus architecto minima vitae non molestiae corrupti. Enim architecto veritatis sapiente soluta repellendus quam dignissimos deserunt magnam quia quae rerum! Temporibus recusandae, tenetur consequatur eius eum ipsam quo assumenda velit explicabo autem itaque est beatae soluta consectetur, sapiente, placeat enim quiQuasi, eveniet quo. Soluta quam assumenda nobis quo voluptatum, ratione labore harum cumque incidunt inventore delectus in accusamus architecto minima vitae non molestiae corrupti. Enim architecto veritatis sapiente soluta repellendus quam dignissimos deserunt magnam quia quae rerum! Temporibus recusandae, tenetur consequatur eius eum ipsam quo assumenda velit explicabo autem itaque est beatae soluta consectetur, sapiente, placeat enim quiQuasi, eveniet quo. Soluta quam assumenda nobis quo voluptatum, ratione labore harum cumque incidunt inventore delectus in accusamus architecto minima vitae non molestiae corrupti. Enim architecto veritatis sapiente soluta repellendus quam dignissimos deserunt magnam quia quae rerum! Temporibus recusandae, tenetur consequatur eius eum ipsam quo assumenda velit explicabo autem itaque est beatae soluta consectetur, sapiente, placeat enim quiQuasi, eveniet quo. Soluta quam assumenda nobis quo voluptatum, ratione labore harum cumque incidunt inventore delectus in accusamus architecto minima vitae non molestiae corrupti. Enim architecto veritatis sapiente soluta repellendus",
+        image: { url: "/assets/ninjas/1.png" },
+    },
+];
 
 const EventList = () => {
-    const { data: posts } = usePosts();
-    
-    const [selectedPost, setSelectedPost] = useState<any>(null);
+    // const { data: posts } = usePosts();
 
+    const [selectedPost, setSelectedPost] = useState<any>(null);
 
     return (
         <section className="min-h-screen py-20 px-4 sm:px-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-16 relative">
@@ -39,11 +50,17 @@ const EventList = () => {
                 ))}
             </div>
 
-            <PostDialog
+            <ScrollableDialog
                 open={!!selectedPost}
                 onOpenChange={() => setSelectedPost(null)}
                 post={selectedPost}
             />
+
+            {/* <PostDialog
+                open={!!selectedPost}
+                onOpenChange={() => setSelectedPost(null)}
+                post={selectedPost}
+            /> */}
         </section>
     );
 };

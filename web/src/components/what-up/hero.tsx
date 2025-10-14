@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
 
             {/* Right */}
-            <div className="flex items-center justify-end mt-10 md:mt-0">
+            <div className="flex items-center justify-end max-w-md:mt-32 ">
                 <motion.h1
                     className="text-4xl md:text-6xl font-bowlby leading-loose text-right"
                     variants={container}
