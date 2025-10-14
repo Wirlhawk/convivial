@@ -17,7 +17,7 @@ const posts: Post[] = [
 ];
 
 const EventList = () => {
-    // const { data: posts } = usePosts();
+    const { data: posts } = usePosts();
 
     const [selectedPost, setSelectedPost] = useState<any>(null);
 
