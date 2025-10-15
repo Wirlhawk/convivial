@@ -78,27 +78,13 @@ export default function About() {
                     className="aspect-square object-cover border-2 rounded-lg mx-auto lg:ml-auto bg-accent h-fit max-w-72"
                 />
 
-                <motion.div
-                    className="relative max-w-72 mx-auto mb-5 h-fit"
-                    variants={item}
-                >
-                    <motion.img
-                        width={300}
-                        height={300}
-                        alt=""
-                        src={"/assets/ninjas/2.png"}
-                        className="aspect-square object-cover border-2 rounded-lg mx-auto lg:ml-auto  h-fit max-w-72 z-10"
-                    />
-                    {/* bottom "shadow card" */}
-                    <div
-                        className={cn(
-                            "absolute inset-0 translate-x-3 translate-y-3 rounded-2xl border-3 border-black shadow-sm bg-secondary"
-                        )}
-                    />
-
-                    {/* main card */}
-                </motion.div>
+                
             </motion.div>
         </section>
     );
 }
+
+
+/* 
+
+*/
