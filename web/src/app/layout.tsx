@@ -39,7 +39,7 @@ export default function RootLayout({
             />
             <body
                 className={`${inter.className} ${BowlbyOne.variable} antialiased`}
-            >
+            >1
                 <QueryProvider>
                     <Navbar />
                     {/* <SmoothScroll>{children}</SmoothScroll> */}
