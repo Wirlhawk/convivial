@@ -24,7 +24,7 @@ export default function PostDialog({
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="p-0 border-0 bg-transparent shadow-none outline-none">
+            <DialogContent className="p-0 border-0 bg-transparent shadow-none outline-none ">
                 <div className="relative mx-auto w-[min(92vw,520px)]">
                     {/* Back stack layers */}
                     <div

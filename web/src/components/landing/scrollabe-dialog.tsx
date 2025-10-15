@@ -21,7 +21,7 @@ export default function ScrollableDialog({
     if (!post) return null;
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-xl [&>button:last-child]:hidden">
+            <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[90vh] sm:max-w-xl [&>button:last-child]:hidden overflow-hidden border-4  ">
                 <ScrollArea
                     className="flex max-h-full flex-col overflow-hidden"
                     onWheel={(e) => {
@@ -38,9 +38,9 @@ export default function ScrollableDialog({
                         }
                     }}
                 >
-                    <header className="px-8 pt-10 pb-4 text-center">
-                        <DialogHeader className="p-0">
-                            <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby">
+                    <header className="px-8  py-8 text-center bg-accent">
+                        <DialogHeader className="">
+                            <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby ">
                                 {post.title}
                             </DialogTitle>
                         </DialogHeader>
@@ -50,7 +50,7 @@ export default function ScrollableDialog({
                         <img
                             src={post.image.url!}
                             alt={`${post.title} image`}
-                            className="block w-full h-44 object-cover"
+                            className="block w-full h-72 object-cover"
                         />
                     </figure>
 
