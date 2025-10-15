@@ -1,27 +1,30 @@
+// SmoothScroll.tsx
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 
-export default function SmoothScroll({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // default easing
-      smoothWheel: true,
-    });
+export const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
+    const lenisRef = useRef<Lenis | null>(null);
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    useEffect(() => {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+        });
+        lenisRef.current = lenis;
 
-    requestAnimationFrame(raf);
+        function raf(time: number) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
 
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
 
-  return <>{children}</>;
-}
+    return <>{children}</>; // optionally wrap with a context provider
+};

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Bowlby_One, Inter } from "next/font/google";
 import Navbar from "@/components/navbar/navbar";
-import SmoothScroll from "@/components/provider/smooth-scroll";
+import { SmoothScroll } from "@/components/provider/smooth-scroll";
 import { QueryProvider } from "@/lib/query-client";
+import { Bowlby_One, Inter } from "next/font/google";
 
 const BowlbyOne = Bowlby_One({
     variable: "--font-bowlby",
@@ -42,7 +42,8 @@ export default function RootLayout({
             >
                 <QueryProvider>
                     <Navbar />
-                    <SmoothScroll>{children}</SmoothScroll>
+                    {/* <SmoothScroll>{children}</SmoothScroll> */}
+                    {children}
                 </QueryProvider>
             </body>
         </html>

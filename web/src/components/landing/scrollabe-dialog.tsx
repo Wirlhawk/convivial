@@ -24,7 +24,22 @@ export default function ScrollableDialog({
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-xl [&>button:last-child]:hidden">
-                <ScrollArea className="flex max-h-full flex-col overflow-hidden">
+                <ScrollArea
+                    className="flex max-h-full flex-col overflow-hidden"
+                    onWheel={(e) => {
+                        const el = e.currentTarget;
+                        const atTop = el.scrollTop === 0;
+                        const atBottom =
+                            el.scrollHeight - el.scrollTop === el.clientHeight;
+
+                        if (
+                            (e.deltaY < 0 && atTop) || // trying to scroll up but already at top
+                            (e.deltaY > 0 && atBottom) // trying to scroll down but already at bottom
+                        ) {
+                            e.preventDefault();
+                        }
+                    }}
+                >
                     <header className="px-8 pt-10 pb-4 text-center">
                         <DialogHeader className="p-0">
                             <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby">

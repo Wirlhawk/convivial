@@ -9,22 +9,23 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { ScrollArea } from "@/components/ui/scroll-area"
 
-export default function Comp315() {
+export default function Component() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Scrollable (native scrollbar)</Button>
+        <Button variant="outline">Scrollable (custom scrollbar)</Button>
       </DialogTrigger>
       <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[min(640px,80vh)] sm:max-w-lg [&>button:last-child]:hidden">
-        <div className="overflow-y-auto">
+        <ScrollArea className="flex max-h-full flex-col overflow-hidden">
           <DialogHeader className="contents space-y-0 text-left">
             <DialogTitle className="px-6 pt-6">
               Frequently Asked Questions (FAQ)
             </DialogTitle>
             <DialogDescription asChild>
               <div className="p-6">
-                <div className="[&_strong]:text-foreground space-y-4 [&_strong]:font-semibold">
+                <div className="space-y-4 [&_strong]:font-semibold [&_strong]:text-foreground">
                   <div className="space-y-1">
                     <p>
                       <strong>Account Management</strong>
@@ -151,7 +152,7 @@ export default function Comp315() {
               <Button type="button">Okay</Button>
             </DialogClose>
           </DialogFooter>
-        </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
   )
