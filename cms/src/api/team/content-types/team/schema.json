@@ -12,17 +12,21 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "role": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "bio": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "avatar": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
