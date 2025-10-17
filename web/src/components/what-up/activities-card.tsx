@@ -12,7 +12,7 @@ export default function ActivitiesCard({
     color: string;
 }) {
     return (
-        <div className="relative max-w-xl mx-auto mb-5 h-fit">
+        <div className="relative w-xl mx-auto mb-5 h-fit">
             {/* bottom "shadow card" */}
             <div
                 className={cn(

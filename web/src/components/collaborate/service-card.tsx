@@ -15,7 +15,7 @@ export default function ({
     backgroundColor?: string;
 }) {
     return (
-        <div className="relative w-md md:w-sm mx-auto mb-5 h-fit">
+        <div className="relative w-md md:w-sm mx-auto mb-5 h-full">
             {/* bottom "shadow card" */}
             <div
                 className={cn(
@@ -25,7 +25,7 @@ export default function ({
             />
 
             {/* main card */}
-            <Card className="relative border-3 border-black rounded-2xl gap-2">
+            <Card className="relative border-3 border-black rounded-2xl gap-2 h-full">
                 <CardHeader>
                     <img
                         src={image}

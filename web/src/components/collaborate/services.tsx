@@ -51,9 +51,9 @@ export default function Services() {
                 {services?.map((service, index) => (
                     <motion.div
                         key={service.id}
-                        className={`mx-auto md:mx-0 ${
+                        className={`mx-auto md:mx-0 mt-16 ${
                             index % 2 === 1
-                                ? "md:mt-16 md:justify-self-end"
+                                ? "md:justify-self-end"
                                 : "md:justify-self-start"
                         }`}
                         initial={{ opacity: 0, y: 50 }}
