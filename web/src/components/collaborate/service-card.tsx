@@ -1,7 +1,5 @@
-import React from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { Card, CardContent, CardHeader } from "../ui/card";
 
 export default function ({
     title,

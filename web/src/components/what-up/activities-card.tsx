@@ -1,18 +1,24 @@
 import React from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ActivitiesCard({
+    id,
     title,
     description,
     color,
 }: {
+    id: string;
     title: string;
     description: string;
     color: string;
 }) {
     return (
-        <div className="relative w-xl mx-auto mb-5 h-fit">
+        <Link
+            className="relative w-full md:w-xl mx-auto mb-5 h-fit"
+            href={`/what-up/${id}`}
+        >
             {/* bottom "shadow card" */}
             <div
                 className={cn(
@@ -32,6 +38,6 @@ export default function ActivitiesCard({
                     {description}
                 </CardContent>
             </Card>
-        </div>
+        </Link>
     );
 }

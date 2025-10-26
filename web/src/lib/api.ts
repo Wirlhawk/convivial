@@ -1,6 +1,8 @@
 // API configuration and utility functions
 
-const API_BASE_URL = "https://glowing-success-07d5a5fc8d.strapiapp.com/api" ;
+import { BlocksContent } from "@strapi/blocks-react-renderer";
+
+export const API_BASE_URL = "https://glowing-success-07d5a5fc8d.strapiapp.com/api" ;
 
 export interface ApiResponse<T> {
     data: T;
@@ -13,7 +15,6 @@ export interface ApiResponse<T> {
         };
     };
 }
-
 
 export interface Post {
     id: number;
@@ -38,10 +39,12 @@ export interface Team {
 }
 
 export interface About {
-    id: number;
+    documentId: string;
     title: string;
     description: string;
     image: { url: string | null };
+    content: BlocksContent
+    createdAt: string;
 }
 
 
@@ -72,6 +75,6 @@ export const api = {
     },
     about: {
         getAll: () => fetchApi<About[]>('/abouts?populate=*'),
-        getById: (id: number) => fetchApi<About>(`/abouts/${id}?populate=*`),
+        getById: (id: string) => fetchApi<About>(`/abouts/${id}?populate=*`),
     },
 };

@@ -9,7 +9,7 @@ export function useAbout() {
     });
 }
 
-export function useAboutById(id: number) {
+export function useAboutById(id: string) {
     return useQuery({
         queryKey: ['about', id],
         queryFn: () => api.about.getById(id),

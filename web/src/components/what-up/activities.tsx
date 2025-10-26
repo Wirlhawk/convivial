@@ -29,14 +29,14 @@ const activities = [
 ];
 
 export default function Activites() {
-    const { data: abouts } = useAbout();
+const { data: abouts } = useAbout();
 
     return (
         <div className="flex flex-col max-w-7xl mx-auto px-6 py-20 gap-20">
             {abouts?.map((activity, index) => (
                 <motion.div
                     key={index}
-                    className={`flex max-md:flex-col-reverse items-center gap-8 ${
+                    className={`flex max-md:flex-col-reverse items-center gap-8 w-full ${
                         index % 2 === 1 ? "flex-row-reverse" : ""
                     }`}
                     initial={{ opacity: 0, y: 50 }}
@@ -45,6 +45,7 @@ export default function Activites() {
                     viewport={{ once: true, amount: 0.2 }}
                 >
                     <ActivitiesCard
+                        id={activity.documentId}
                         title={activity.title}
                         description={activity.description}
                         color={index % 2 === 1 ? "bg-accent" : "bg-secondary"}
@@ -52,7 +53,7 @@ export default function Activites() {
                     <motion.img
                         src={activity.image.url!}
                         alt=""
-                        className="w-full max-w-xl "
+                        className="w-full max-w-md "
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
