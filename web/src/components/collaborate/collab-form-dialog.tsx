@@ -10,7 +10,7 @@ import {
     DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { api } from "@/lib/api";
+import { API_BASE_URL } from "@/lib/api";
 import { useToast } from "@/components/ui/use-toast";
 
 interface CollabFormDialogProps {
@@ -28,11 +28,11 @@ export default function CollabFormDialog({
     const [email, setEmail] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
-    const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; email?: string; service?: string }>({});
     const { toast } = useToast();
 
     const validateForm = () => {
-        const newErrors: { name?: string; email?: string } = {};
+        const newErrors: { name?: string; email?: string; service?: string } = {};
         let isValid = true;
 
         if (!name.trim()) {
@@ -45,6 +45,11 @@ export default function CollabFormDialog({
             isValid = false;
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
             newErrors.email = "Invalid email address";
+            isValid = false;
+        }
+
+        if (!serviceTitle.trim()) {
+            newErrors.service = "Service is required";
             isValid = false;
         }
 
@@ -62,11 +67,24 @@ export default function CollabFormDialog({
         setIsSubmitting(true);
 
         try {
-            // Here you would typically call your API to submit the form
-            // For example: await api.orders.create({ name, email, service: serviceTitle });
+            // Send data to Strapi /orders endpoint
+            const response = await fetch(`${API_BASE_URL}/orders`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    data: {
+                        name: name,
+                        email: email,
+                        service: serviceTitle
+                    }
+                })
+            });
 
-            // Simulate API call with timeout
-            await new Promise((resolve) => setTimeout(resolve, 1000));
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+            }
 
             setSubmitSuccess(true);
             toast({
