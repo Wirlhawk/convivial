@@ -79,7 +79,7 @@ export default function Navbar() {
                         </PopoverContent>
                     </Popover>
                     {/* Logo */}
-                    <a href="#" className="font-bowlby text-2xl text-foreground max-sm:hidden">
+                    <a href="/" className="font-bowlby text-2xl text-foreground max-sm:hidden">
                         Convivial 
                     </a>
                 </div>
