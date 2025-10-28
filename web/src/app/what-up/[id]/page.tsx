@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <div className="max-w-7xl mx-auto px-6">
                 <InView>
                     <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-xl">
-                        <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center tracking-wide">
                             <StaggerText className="text-5xl md:text-7xl font-bowlby text-primary text-center px-4">
                                 {abouts.title}
                             </StaggerText>
