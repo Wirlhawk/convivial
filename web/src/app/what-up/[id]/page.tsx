@@ -24,14 +24,14 @@ export default async function Page({ params }: { params: { id: string } }) {
         <section className="min-h-screen py-20 bg-gradient-to-b from-background to-muted/30">
             <div className="max-w-7xl mx-auto px-6">
                 <InView>
-                    <div className="relative w-full h-[40vh] md:h-[50vh] overflow-hidden rounded-xl">
+                    <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-xl">
                         <div className="absolute inset-0 bg-black/40 z-10 flex items-center justify-center">
                             <StaggerText className="text-5xl md:text-7xl font-bowlby text-primary text-center px-4">
                                 {abouts.title}
                             </StaggerText>
                         </div>
                         <img
-                            src="/background.png"
+                            src={abouts.image.url || "/background.png"}
                             className="w-full h-full object-cover object-center"
                             alt="Article hero image"
                         />
