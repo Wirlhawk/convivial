@@ -21,12 +21,12 @@ export default function TextPathScroll() {
             if (text1.current && text2.current) {
                 const progress = scrollYProgress.get();
                 
-                // Text 1 moves left to right (-100 → 100)
-                const offset1 = -100 + progress * 200;
+                // Text 1 moves right to left (100 → -100)
+                const offset1 = 100 - progress * 200;
                 text1.current.setAttribute("startOffset", `${offset1}%`);
                 
-                // Text 2 moves right to left (100 → 0)
-                const offset2 = 100 - progress * 200;
+                // Text 2 moves left to right (-100 → 100)
+                const offset2 = -100 + progress * 200;
                 text2.current.setAttribute("startOffset", `${offset2}%`);
             }
             
