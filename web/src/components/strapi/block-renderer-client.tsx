@@ -9,7 +9,7 @@ export default function BlockRendererClient({
 }: {
     readonly content: BlocksContent;
 }) {
-    if (!content) return null;
+    if (!content) return null;``
     return (
         <BlocksRenderer
             content={content}

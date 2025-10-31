@@ -26,13 +26,14 @@ export default function CollabFormDialog({
 }: CollabFormDialogProps) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
-    const [errors, setErrors] = useState<{ name?: string; email?: string; service?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string; service?: string }>({});
     const { toast } = useToast();
 
     const validateForm = () => {
-        const newErrors: { name?: string; email?: string; service?: string } = {};
+        const newErrors: { name?: string; email?: string; message?: string; service?: string } = {};
         let isValid = true;
 
         if (!name.trim()) {
@@ -45,6 +46,11 @@ export default function CollabFormDialog({
             isValid = false;
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
             newErrors.email = "Invalid email address";
+            isValid = false;
+        }
+        
+        if (!message.trim()) {
+            newErrors.message = "Message is required";
             isValid = false;
         }
 
@@ -77,6 +83,7 @@ export default function CollabFormDialog({
                     data: {
                         name: name,
                         email: email,
+                        message: message,
                         service: serviceTitle
                     }
                 })
@@ -98,6 +105,7 @@ export default function CollabFormDialog({
                 setSubmitSuccess(false);
                 setName("");
                 setEmail("");
+                setMessage("");
                 setErrors({});
             }, 2000);
         } catch (error) {
@@ -116,7 +124,7 @@ export default function CollabFormDialog({
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle className="text-xl font-bowlby">
+                    <DialogTitle className="text-xl font-bowlby tracking-wide">
                         Collaborate on {serviceTitle}
                     </DialogTitle>
                 </DialogHeader>
@@ -178,6 +186,32 @@ export default function CollabFormDialog({
                             {errors.email && (
                                 <p className="text-xs text-red-500">
                                     {errors.email}
+                                </p>
+                            )}
+                        </div>
+
+                        <div className="space-y-2">
+                            <label
+                                htmlFor="message"
+                                className="text-sm font-medium"
+                            >
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                className={`w-full rounded-md border ${
+                                    errors.message
+                                        ? "border-red-500"
+                                        : "border-input"
+                                } bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring`}
+                                placeholder="Enter your message"
+                                rows={4}
+                            />
+                            {errors.message && (
+                                <p className="text-xs text-red-500">
+                                    {errors.message}
                                 </p>
                             )}
                         </div>

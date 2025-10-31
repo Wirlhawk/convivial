@@ -19,6 +19,9 @@
     },
     "service": {
       "type": "string"
+    },
+    "message": {
+      "type": "string"
     }
   }
 }

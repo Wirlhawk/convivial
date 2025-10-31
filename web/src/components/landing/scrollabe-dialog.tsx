@@ -6,7 +6,6 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Post } from "@/lib/api";
-import { cn } from "@/lib/utils";
 
 interface ScrollableDialogProps {
     open: boolean;
@@ -22,7 +21,7 @@ export default function ScrollableDialog({
     if (!post) return null;
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[90vh] sm:max-w-xl [&>button:last-child]:hidden overflow-visible border-0">
+            <DialogContent className="flex flex-col gap-0 p-0 sm:max-h-[90vh] sm:max-w-3xl [&>button:last-child]:hidden overflow-visible border-0">
                 {/* Book-like appearance with layered pages */}
                 <div className="relative bg-none">
                     {/* Background layers for book effect */}
@@ -57,11 +56,11 @@ export default function ScrollableDialog({
                             </header>
 
                             {/* Main image */}
-                            <div className="px-8 pb-4 ">
+                            <div className="border-b-2 border-t-2 ">
                                 <img 
                                     src={post.image.url || "/assets/ninjas/1.png"} 
                                     alt={post.title || "Post image"} 
-                                    className="w-full h-auto object-cover rounded-md"
+                                    className="w-full h-64 object-cover rounded-md"
                                 />
                             </div>
 

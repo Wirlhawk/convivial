@@ -52,10 +52,10 @@ export default function ({
                 <CardFooter className="pt-2">
                     <Button 
                         onClick={() => setDialogOpen(true)}
-                        className="w-full font-bowlby text-lg"
+                        className="w-full font-bowlby text-lg tracking-wide"
                         variant="default"
                     >
-                        Collaborate
+                        Reach Us Here
                     </Button>
                 </CardFooter>
             </Card>
