@@ -41,8 +41,11 @@ export default function TextPathScroll() {
     }, [scrollYProgress]);
 
     return (
-        <div ref={container} className="h-[300vh] relative mt-[20vh]">
-            <div className="flex justify-center items-center sticky top-1/2 -translate-y-1/2">
+        <div
+            ref={container}
+            className="h-[300vh] relative pt-[40vh] bg-[url('/assets/wth-bg/3.svg')] bg-[size:100%_auto] bg-repeat-y"
+        >
+            <div className="flex justify-center items-center sticky top-1/2 -translate-y-1/2 text-primary ">
                 <svg className="w-full pt-30" viewBox="0 0 250 150">
                     {/* top curve */}
                     <path

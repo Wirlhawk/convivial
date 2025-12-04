@@ -45,8 +45,8 @@ export default function Hero() {
     return (
         <section className="flex flex-col relative">
             {/* Hero */}
-            <div className="relative flex h-screen justify-center bg-[url('/assets/what-up/background.png')] bg-cover bg-center">
-                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary ">
+            <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/1.svg')] bg-cover bg-center">
+                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-bold  ">
                     <TextEffect
                         className="text-5xl md:text-8xl mb-2"
                         as="h1"
@@ -79,9 +79,9 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            <div className="h-screen  relative overflow-clip pb-5">
+            <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/2.svg')] bg-cover">
                 <motion.h1
-                    className="sticky top-1/2 z-10  text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 "
+                    className="sticky top-1/2 z-10 tracking-tighter text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 "
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -91,7 +91,6 @@ export default function Hero() {
                     What Is This
                     <br className="sm:hidden" /> All About?
                 </motion.h1>
-
 
                 {/* LEFT column */}
                 <motion.div
@@ -103,13 +102,13 @@ export default function Hero() {
                 >
                     <div ref={leftRef} className="relative flex-1">
                         <motion.img
-                            src="/assets/what-up/cloud_4.png"
+                            src="/assets/what-up/awan1.png"
                             alt=""
                             className="absolute top-8 left-0 sm:left-10 w-[35rem]"
                             style={{ x: left1X, y: left1Y }}
                         />
                         <motion.img
-                            src="/assets/what-up/cloud_3.png"
+                            src="/assets/what-up/awan2.png"
                             alt=""
                             className="absolute top-10 left-0 sm:left-50 w-[30rem]"
                             style={{ x: left2X, y: left2Y }}
@@ -119,13 +118,13 @@ export default function Hero() {
                     {/* RIGHT column */}
                     <div ref={rightRef} className="relative flex-1">
                         <motion.img
-                            src="/assets/what-up/cloud_4.png"
+                            src="/assets/what-up/awan1.png"
                             alt=""
                             className="absolute top-8 right-0 sm:right-10 w-[35rem]"
                             style={{ x: right1X, y: right1Y }}
                         />
                         <motion.img
-                            src="/assets/what-up/cloud_3.png"
+                            src="/assets/what-up/awan2.png"
                             alt=""
                             className="absolute top-10 right-0 sm:right-50 w-[30rem]"
                             style={{ x: right2X, y: right2Y }}

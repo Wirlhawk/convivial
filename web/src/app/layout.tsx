@@ -4,10 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
 import { SmoothScroll } from "@/components/provider/smooth-scroll";
 import { QueryProvider } from "@/lib/query-client";
-import { Bowlby_One, Inter } from "next/font/google";
+import { Press_Start_2P, Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 
-const BowlbyOne = Bowlby_One({
+const BowlbyOne = Press_Start_2P({
     variable: "--font-bowlby",
     subsets: ["latin"],
     weight: ["400"],
@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Convivial Futures",
+    title: "Convivial Futures Organization",
     description:
         "Welcome to Convivial Futures: (Not) a Multidimensional Ninjas' Hideout",
     icons: "/assets/ninjas/2.png",

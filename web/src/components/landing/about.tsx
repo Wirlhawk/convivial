@@ -30,9 +30,10 @@ export default function About() {
     };
 
     return (
-        <section className="min-h-screen py-20 px-10 max-w-7xl mx-auto flex flex-col  justify-center overflow-hidden gap-10 ">
+        <section className="min-h-screen py-20 px-10 mx-auto flex flex-col justify-center overflow-hidden gap-10 bg-[url('/assets/wth-bg/3.svg')] bg-cover ">
+
             <motion.div
-                className="flex w-full gap-10 lg:gap-20 flex-col-reverse lg:flex-row overflow items-center"
+                className="flex w-full max-w-7xl mx-auto gap-10 lg:gap-20 flex-col-reverse lg:flex-row overflow items-center"
                 variants={container}
                 initial="hidden"
                 whileInView="visible"
@@ -56,7 +57,7 @@ export default function About() {
             </motion.div>
 
             <motion.div
-                className="flex w-full gap-10 lg:gap-20 flex-col-reverse lg:flex-row-reverse overflow items-center"
+                className="flex w-full max-w-7xl mx-auto gap-10 lg:gap-20 flex-col-reverse lg:flex-row-reverse overflow items-center"
                 variants={container}
                 initial="hidden"
                 whileInView="visible"
@@ -77,8 +78,6 @@ export default function About() {
                     variants={item}
                     className="aspect-square object-cover border-2 rounded-lg mx-auto lg:ml-auto bg-accent h-fit max-w-72"
                 />
-
-                
             </motion.div>
         </section>
     );
