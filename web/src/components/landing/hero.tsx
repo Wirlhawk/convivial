@@ -46,7 +46,7 @@ export default function Hero() {
         <section className="flex flex-col relative">
             {/* Hero */}
             <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/1.svg')] bg-cover bg-center">
-                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-bold  ">
+                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-black  text-stroke text-stroke-red-400">
                     <TextEffect
                         className="text-5xl md:text-8xl mb-2"
                         as="h1"
@@ -81,7 +81,7 @@ export default function Hero() {
 
             <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/2.svg')] bg-cover">
                 <motion.h1
-                    className="sticky top-1/2 z-10 tracking-tighter text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 "
+                    className="sticky top-1/2 z-10 tracking-tighter text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 text-stroke text-stroke-red-400 "
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
@@ -89,7 +89,7 @@ export default function Hero() {
                     style={{ scale: textScale }}
                 >
                     What Is This
-                    <br className="sm:hidden" /> All About?
+                    <br /> All About?
                 </motion.h1>
 
                 {/* LEFT column */}
