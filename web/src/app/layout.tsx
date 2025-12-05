@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Convivial Futures Organization",
+    title: "Convivial Futures Institute",
     description:
         "Welcome to Convivial Futures: (Not) a Multidimensional Ninjas' Hideout",
     icons: "/assets/ninjas/2.png",

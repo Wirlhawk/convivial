@@ -69,6 +69,11 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: 1 }}
                 >
+                    <img
+                        src="/assets/ninjas/hoop_ninja.gif"
+                        alt="Hoop Ninja"
+                        className="absolute -bottom-24 w-48 h-auto -translate-x-1/2 -translate-y-1/2 md:w-64 lg:w-96"
+                    />
                     <Button
                         className="absolute bottom-15 min-w-60 font-bold -translate-x-1/2 -translate-y-1/2 "
                         size={"lg"}
