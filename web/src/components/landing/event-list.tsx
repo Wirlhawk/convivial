@@ -21,8 +21,8 @@ const EventList = () => {
     const [selectedPost, setSelectedPost] = useState<any>(null);
 
     return (
-        <section className="min-h-screen py-20 px-4 sm:px-10  mx-auto grid grid-cols-1 sm:grid-cols-3 gap-16 relative bg-[url('/assets/wth-bg/3.svg')] bg-[size:100%_auto] bg-repeat-y">
-            <div className="max-w-7xl mx-auto">
+        <section className="min-h-screen py-20 px-4 sm:px-10  mx-auto relative bg-[url('/assets/wth-bg/3.svg')] bg-[size:100%_auto] bg-repeat-y">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-16 ">
                 {/* Left section */}
                 <div className="sm:col-span-1 col-span-1 w-full order-2 sm:order-1 sticky top-24 h-fit border-t-6 pt-5">
                     <div className="relative">
