@@ -1,18 +1,15 @@
 import BlockRendererClient from "@/components/strapi/block-renderer-client";
-import { About, API_BASE_URL } from "@/lib/api";
-import { notFound } from "next/navigation";
-import StaggerText from "@/components/ui/stagger-text";
 import { InView } from "@/components/ui/in-view";
-import { Card } from "@/components/ui/card";
+import StaggerText from "@/components/ui/stagger-text";
+import { About, API_BASE_URL } from "@/lib/api";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default async function Page({ params }: { params: { id: string } }) {
     const { id } = await params;
 
-    const res = await fetch(
-        `https://glowing-success-07d5a5fc8d.strapiapp.com/api/abouts/${id}?populate=*`
-    );
+    const res = await fetch(`${API_BASE_URL}/abouts/${id}?populate=*`);
 
     if (!res.ok) return notFound();
 
@@ -48,7 +45,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                                 <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent my-6" />
                             </div>
                         )}
-                        
+
                         <div className="prose prose-lg max-w-none">
                             <BlockRendererClient content={abouts.content} />
                         </div>
@@ -60,7 +57,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                         href="/what-up"
                         className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                     >
-                        <ChevronLeft/>
+                        <ChevronLeft />
                         Back to Articles
                     </Link>
                 </div>

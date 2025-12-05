@@ -2,7 +2,8 @@
 
 import { BlocksContent } from "@strapi/blocks-react-renderer";
 
-export const API_BASE_URL = "https://glowing-success-07d5a5fc8d.strapiapp.com/api" ;
+// export const API_BASE_URL = "https://glowing-success-07d5a5fc8d.strapiapp.com/api" ;
+export const API_BASE_URL = "https://trusty-symphony-dd1e29275b.strapiapp.com/api" ;
 
 export interface ApiResponse<T> {
     data: T;
