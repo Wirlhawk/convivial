@@ -30,8 +30,7 @@ export default function About() {
     };
 
     return (
-        <section className="min-h-screen py-20 px-10 mx-auto flex flex-col justify-center overflow-hidden gap-10 bg-[url('/assets/wth-bg/3.svg')] bg-cover ">
-
+        <section className="min-h-screen py-20 px-10 mx-auto flex flex-col justify-center overflow-hidden gap-10 bg-[url('/assets/wth-bg/3.svg')] bg-[size:100%_auto] bg-repeat-y ">
             <motion.div
                 className="flex w-full max-w-7xl mx-auto gap-10 lg:gap-20 flex-col-reverse lg:flex-row overflow items-center"
                 variants={container}

@@ -79,7 +79,7 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/2.svg')] bg-cover">
+            <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/2.svg')] bg-[size:100%_auto] bg-repeat-y">
                 <motion.h1
                     className="sticky top-1/2 z-10 tracking-tighter text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 text-stroke text-stroke-red-400 "
                     initial={{ opacity: 0, y: 100 }}
