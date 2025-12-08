@@ -46,20 +46,15 @@ export default function Hero() {
         <section className="flex flex-col relative">
             {/* Hero */}
             <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/1.svg')] bg-cover bg-center">
-                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-black  text-stroke text-stroke-red-400">
-                    <TextEffect
-                        className="text-5xl md:text-8xl mb-2"
-                        as="h1"
-                        preset="slide"
-                        delay={0.5}
-                    >
+                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-black ">
+                    <h1 className="text-5xl md:text-8xl mb-6 text-stroke text-stroke-red-400 animate-bounce-soft">
                         Convivial Futures
-                    </TextEffect>
+                    </h1>
                     <TextEffect
-                        className="text-lg md:text-3xl"
+                        className="text-lg md:text-3xl text-black"
                         as="h2"
                         preset="slide"
-                        delay={0.5}
+                        delay={3.5}
                     >
                         (Not) a Multidimensional Ninjas' Hideout
                     </TextEffect>
@@ -69,11 +64,11 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut", delay: 1 }}
                 >
-                    <img
+                    {/* <img
                         src="/assets/ninjas/hoop_ninja.gif"
                         alt="Hoop Ninja"
                         className="absolute -bottom-24 w-48 h-auto -translate-x-1/2 -translate-y-1/2 md:w-64 lg:w-96"
-                    />
+                    /> */}
                     <Button
                         className="absolute bottom-15 min-w-60 font-bold -translate-x-1/2 -translate-y-1/2 "
                         size={"lg"}
@@ -86,14 +81,14 @@ export default function Hero() {
 
             <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/2.svg')] bg-[size:100%_auto] bg-repeat-y">
                 <motion.h1
-                    className="sticky top-1/2 z-10 tracking-tighter text-center text-2xl sm:text-4xl font-bowlby text-primary mt-30 text-stroke text-stroke-red-400 "
+                    className="sticky top-1/2 z-10 tracking-tighter text-center text-3xl sm:text-5xl font-bowlby text-primary mt-30 text-stroke-2 text-stroke-red-400 "
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                     viewport={{ amount: 0.7, once: true }}
                     style={{ scale: textScale }}
                 >
-                    What Is This
+                    What This Is
                     <br /> All About?
                 </motion.h1>
 

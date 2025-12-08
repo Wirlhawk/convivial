@@ -11,30 +11,30 @@ export default function TextPathScroll() {
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start end", "50% start"],
+        offset: ["start 55%", "end start"], // The animation starts when the top of the target element is halfway down the viewport, and ends when the bottom of the target element reaches the top of the viewport.
     });
 
     useEffect(() => {
         let frameId: number;
-        
+
         const updateTextPaths = () => {
             if (text1.current && text2.current) {
                 const progress = scrollYProgress.get();
-                
+
                 // Text 1 moves right to left (100 → -100)
                 const offset1 = 100 - progress * 200;
                 text1.current.setAttribute("startOffset", `${offset1}%`);
-                
+
                 // Text 2 moves left to right (-100 → 100)
                 const offset2 = -100 + progress * 200;
                 text2.current.setAttribute("startOffset", `${offset2}%`);
             }
-            
+
             frameId = requestAnimationFrame(updateTextPaths);
         };
-        
+
         frameId = requestAnimationFrame(updateTextPaths);
-        
+
         return () => {
             cancelAnimationFrame(frameId);
         };
@@ -51,13 +51,17 @@ export default function TextPathScroll() {
                     <path
                         id="curve1"
                         fill="none"
+                        // The '100' in 'm0,100' controls the starting Y position of the top curve.
+                        // Adjust this value to move the entire curve (and text) up or down.
                         d="m0,100c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
                     />
                     {/* bottom curve (same shape, lower) */}
                     <path
                         id="curve2"
                         fill="none"
-                        d="m0,140c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
+                        // The '140' in 'm0,140' controls the starting Y position of the bottom curve.
+                        // Adjust this value to move the entire curve (and text) up or down.
+                        d="m0,130c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
                     />
 
                     {/* Text 1 on upper curve */}

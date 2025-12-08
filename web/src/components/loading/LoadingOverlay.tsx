@@ -34,7 +34,13 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
               transition: { duration: 0.8, ease: "easeInOut" }
             }}
           >
-            <NinjaAnimation />
+            {/* <NinjaAnimation /> */}
+            <img 
+              src="/assets/ninjas/hoop_ninja.gif" 
+              alt="Loading Ninja" 
+              className="w-96 h-96 sm:w-128 sm:h-128 object-contain"
+            />
+
             <motion.div 
               className="absolute bottom-10 text-accent text-xl font-bowlby tracking-wide"
               initial={{ opacity: 0 }}
