@@ -11,8 +11,8 @@ export default function page() {
                 alt=""
                 className="sticky max-w-96 left-1/2 -translate-x-1/2 top-0  z-0 max-md:hidden"
             />
-            <Hero/>
-            <Services/>
+            <Hero />
+            <Services />
         </div>
     );
 }

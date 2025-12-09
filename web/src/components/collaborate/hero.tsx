@@ -24,14 +24,14 @@ export default function Hero() {
             {/* Left */}
             <div className="flex items-center">
                 <motion.h1
-                    className="text-4xl md:text-6xl font-bowlby leading-tight"
+                    className="text-4xl md:text-6xl font-bowlby leading-tight font-black"
                     variants={container}
                     initial="hidden"
                     animate="show"
                 >
                     <motion.span
                         variants={item}
-                        className="block text-destructive underline text-6xl md:text-6xl"
+                        className="block text-destructive text-6xl md:text-6xl"
                     >
                         COLLAB-
                     </motion.span>
@@ -53,7 +53,7 @@ export default function Hero() {
             {/* Right */}
             <div className="flex items-center justify-end mt-10 md:mt-0">
                 <motion.h1
-                    className="text-4xl md:text-6xl font-bowlby leading-loose text-right"
+                    className="text-4xl md:text-6xl font-bowlby leading-loose text-right font-black"
                     variants={container}
                     initial="hidden"
                     animate="show"

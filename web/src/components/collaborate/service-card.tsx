@@ -46,13 +46,13 @@ export default function ({
                     />
                 </CardHeader>
                 <CardContent className="text-base leading-relaxed flex flex-col flex-grow">
-                    <h1 className="font-bowlby text-2xl mb-2">{title}</h1>
+                    <h1 className="font-bowlby text-2xl mb-2 text-stroke text-red-400 ">{title}</h1>
                     <p className="break-words">{description}</p>
                 </CardContent>
                 <CardFooter className="pt-2">
                     <Button 
                         onClick={() => setDialogOpen(true)}
-                        className="w-full font-bowlby text-lg tracking-wide"
+                        className="w-full font-bowlby text-lg tracking-wide py-5"
                         variant="default"
                     >
                         Reach Us Here
