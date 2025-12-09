@@ -24,20 +24,20 @@ export default function Hero() {
             {/* Left */}
             <div className="flex items-center">
                 <motion.h1
-                    className="text-4xl md:text-6xl font-bowlby leading-tight"
+                    className="text-4xl md:text-6xl font-bowlby leading-widest font-bold"
                     variants={container}
                     initial="hidden"
                     animate="show"
                 >
                     <motion.span
                         variants={item}
-                        className="block text-destructive underline text-4xl md:text-6xl"
+                        className="block text-destructive text-4xl md:text-6xl"
                     >
                         CHECK
                     </motion.span>
                     <motion.span
                         variants={item}
-                        className="block text-primary text-5xl md:text-7xl"
+                        className="block text-primary text-3xl md:text-5xl"
                     >
                         WHAT IS
                     </motion.span>
@@ -53,7 +53,7 @@ export default function Hero() {
             {/* Right */}
             <div className="flex items-center justify-end max-w-md:mt-32 ">
                 <motion.h1
-                    className="text-4xl md:text-6xl font-bowlby leading-loose text-right"
+                    className="text-4xl md:text-6xl font-bowlby leading-widest font-bold text-right"
                     variants={container}
                     initial="hidden"
                     animate="show"
@@ -66,13 +66,13 @@ export default function Hero() {
                     </motion.span>
                     <motion.span
                         variants={item}
-                        className="block text-primary underline text-5xl md:text-7xl"
+                        className="block text-primary  text-5xl md:text-7xl"
                     >
                         Activities
                     </motion.span>
                     <motion.span
                         variants={item}
-                        className="block text-secondary text-5xl md:text-7xl"
+                        className="block text-secondary text-4xl md:text-6xl underline"
                     >
                         We've Done.
                     </motion.span>
