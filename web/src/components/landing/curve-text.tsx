@@ -55,7 +55,7 @@ export default function TextPathScroll() {
     return (
         <div
             ref={container}
-            className="h-[300vh] relative pt-[40vh] bg-[url('/assets/wth-bg/3.svg')] bg-[size:100%_auto] bg-repeat-y"
+            className="h-[300vh] relative pt-[40vh] bg-[url('/assets/wth-bg/5.png')] bg-[size:100%_auto] bg-repeat-y"
         >
             <div className="flex justify-center items-center sticky top-1/2 -translate-y-1/2 text-primary ">
                 <svg className="w-full pt-30" viewBox="0 0 250 150">
