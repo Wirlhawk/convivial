@@ -26,7 +26,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
       <AnimatePresence>
         {loading && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-white"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white"
             initial={{ opacity: 1 }}
             exit={{ 
               opacity: 0,
@@ -42,10 +42,10 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
             />
 
             <motion.div 
-              className="absolute bottom-10 text-accent text-xl font-bowlby tracking-wide"
+              className="text-xl sm:text-4xl font-bowlby tracking-wide text-stroke text-stroke-red-400 text-primary" // Removed absolute positioning, added top margin for spacing
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
             >
               Entering another dimension...
             </motion.div>
