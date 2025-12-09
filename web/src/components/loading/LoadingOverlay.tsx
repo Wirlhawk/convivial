@@ -42,7 +42,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
             />
 
             <motion.div 
-              className="text-xl sm:text-4xl font-bowlby tracking-wide text-stroke text-stroke-red-400 text-primary" // Removed absolute positioning, added top margin for spacing
+              className="text-xl sm:text-4xl font-bowlby tracking-wide text-stroke-2 font-bold text-stroke-red-400 text-primary" // Removed absolute positioning, added top margin for spacing
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}

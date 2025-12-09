@@ -11,7 +11,7 @@ export default function TextPathScroll() {
 
     const { scrollYProgress } = useScroll({
         target: container,
-        offset: ["start 55%", "end end"], // The animation starts when the top of the target element is halfway down the viewport, and ends when the bottom of the target element reaches the top of the viewport.
+        offset: ["start 55%", "end end"],
     });
 
     useEffect(() => {
@@ -22,21 +22,23 @@ export default function TextPathScroll() {
                 const progress = scrollYProgress.get();
 
                 // Path extensions setup:
-                // Original curve: approx 0 to 250 (width 250)
-                // New path: starts at -200, ends at 450 (width ~650)
-                // "Visible" start (0) is at 200 units along the path
-                // "Visible" end (250) is at 450 units along the path
+                // We extended straight lines significantly to delay the curve entry.
+                // Left extension: 800 units (from x=-800 to x=0)
+                // Curve zone: ~260 units (starts at offset 800)
+                // Right extension: 800 units
 
                 // Text 1 moves right to left
-                // Goal: P=0 -> Right Edge (450), P=1 -> Left Edge (-50)
-                // Formula: 450 - progress * 500
-                const offset1 = 450 - progress * 500;
+                // Start (p=0): Offset 1600 (Far right, on straight path)
+                // End (p=1): Offset -100 (Far left, passed 0)
+                // Range = 1700. Faster speed.
+                const offset1 = 1600 - progress * 1700;
                 text1.current.setAttribute("startOffset", `${offset1}`);
 
                 // Text 2 moves left to right
-                // Goal: P=0 -> Left Edge (-50), P=1 -> Right Edge (450)
-                // Formula: -50 + progress * 500
-                const offset2 = -50 + progress * 500;
+                // Start (p=0): Offset 200 (Far left, on straight path)
+                // End (p=1): Offset 1400 (Far right, on straight path)
+                // Range = 1200. Slower speed (unchanged).
+                const offset2 = 200 + progress * 1200;
                 text2.current.setAttribute("startOffset", `${offset2}`);
             }
 
@@ -61,31 +63,28 @@ export default function TextPathScroll() {
                     <path
                         id="curve1"
                         fill="none"
-                        // The '100' in 'm0,100' controls the starting Y position of the top curve.
-                        // Adjust this value to move the entire curve (and text) up or down.
-                        // Extended with straight lines: M-200,100 L0,100 ... L450,100
-                        d="M-200,100 L0,100 c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68 L450,100"
+                        // Extended path: Starts at x=-800, ends at x=1050.
+                        // Long straight segment (-800 to 0) ensures text stays flat initially.
+                        d="M-800,100 L0,100 c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68 L1050,100"
                     />
                     {/* bottom curve (same shape, lower) */}
                     <path
                         id="curve2"
                         fill="none"
-                        // The '140' in 'm0,140' controls the starting Y position of the bottom curve.
-                        // Adjust this value to move the entire curve (and text) up or down.
-                        // Extended with straight lines: M-200,130 L0,130 ... L450,130
-                        d="M-200,130 L0,130 c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68 L450,130"
+                        // Extended path: Starts at x=-800, ends at x=1050.
+                        d="M-800,130 L0,130 c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68 L1050,130"
                     />
 
                     {/* Text 1 on upper curve */}
                     <text className="text-xs font-bowlby tracking-widest font-light">
-                        <textPath href="#curve1" startOffset="450" ref={text1}>
+                        <textPath href="#curve1" startOffset="1600" ref={text1}>
                             Every noble mission and idea truly matters
                         </textPath>
                     </text>
 
                     {/* Text 2 on lower curve */}
                     <text className="text-xs font-bowlby tracking-widest font-light">
-                        <textPath href="#curve2" startOffset="-50" ref={text2}>
+                        <textPath href="#curve2" startOffset="200" ref={text2}>
                             Let's buddy up and bring them to life!
                         </textPath>
                     </text>

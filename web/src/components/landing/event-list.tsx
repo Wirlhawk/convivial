@@ -31,7 +31,7 @@ const EventList = () => {
                             alt=""
                             className="absolute w-3/4 right-0 top-1/2 z-0"
                         />
-                        <h1 className="text-6xl font-bowlby tracking-wide relative z-10 text-primary ">
+                        <h1 className="text-6xl font-bowlby tracking-wide relative z-10 text-primary text-stroke-2 text-stroke-red-400 font-bold tracking-wider ">
                             What <br /> We've <br /> Done
                         </h1>
                     </div>
@@ -43,7 +43,7 @@ const EventList = () => {
                         <p
                             key={post.id}
                             onClick={() => setSelectedPost(post)}
-                            className="text-5xl font-bowlby truncate overflow-ellipsis whitespace-nowrap hover:underline cursor-pointer"
+                            className="text-5xl font-bowlby truncate overflow-ellipsis whitespace-nowrap hover:underline cursor-pointer underline"
                         >
                             {post.title}
                         </p>
