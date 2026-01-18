@@ -179,6 +179,7 @@ export const api = {
     posts: {
         getAll: async (): Promise<ApiResponse<Post[]>> => {
             const posts = await client.fetch<SanityPost[]>(POSTS_QUERY);
+            console.log('Sanity raw posts:', posts);
             return {
                 data: posts.map((post) => ({
                     _id: post._id,

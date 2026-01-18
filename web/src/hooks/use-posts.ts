@@ -6,6 +6,7 @@ export function usePosts() {
         queryKey: ['posts'],
         queryFn: () => api.posts.getAll(),
         select: (data) => data.data,
+        staleTime: 0, // Force fresh data for debugging
     });
 }
 
