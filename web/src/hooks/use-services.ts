@@ -9,7 +9,7 @@ export function useServices() {
     });
 }
 
-export function useService(id: number) {
+export function useService(id: string) {
     return useQuery({
         queryKey: ['services', id],
         queryFn: () => api.services.getById(id),

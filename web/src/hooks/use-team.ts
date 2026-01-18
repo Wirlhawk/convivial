@@ -9,7 +9,7 @@ export function useTeam() {
     });
 }
 
-export function useTeamMember(id: number) {
+export function useTeamMember(id: string) {
     return useQuery({
         queryKey: ['team', id],
         queryFn: () => api.team.getById(id),

@@ -1,0 +1,25 @@
+{
+    "name": "convivial-studio",
+    "private": true,
+    "version": "1.0.0",
+    "main": "package.json",
+    "license": "MIT",
+    "scripts": {
+        "dev": "sanity dev",
+        "start": "sanity start",
+        "build": "sanity build",
+        "deploy": "sanity deploy",
+        "deploy-graphql": "sanity graphql deploy"
+    },
+    "dependencies": {
+        "@sanity/vision": "^3.72.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "sanity": "^3.72.1",
+        "styled-components": "^6.1.18"
+    },
+    "devDependencies": {
+        "@types/react": "^18.3.18",
+        "typescript": "^5.7.3"
+    }
+}

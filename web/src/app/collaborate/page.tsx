@@ -1,11 +1,9 @@
 import Hero from "@/components/collaborate/hero";
-import ServiceCard from "@/components/collaborate/service-card";
 import Services from "@/components/collaborate/services";
-import React from "react";
 
 export default function page() {
     return (
-        <div className=" relative">
+        <div className="relative">
             <img
                 src="/assets/collaborate/ninja.png"
                 alt=""
