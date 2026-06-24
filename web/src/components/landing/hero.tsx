@@ -45,13 +45,13 @@ export default function Hero() {
     return (
         <section className="flex flex-col relative">
             {/* Hero */}
-            <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/1.svg')] bg-cover bg-center">
+            <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/wth-bg-revision.jpg')] bg-cover bg-center">
                 <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-black ">
-                    <h1 className="text-5xl md:text-8xl mb-6 text-stroke text-stroke-red-400 animate-bounce-soft">
+                    <h1 className="text-5xl md:text-8xl mb-6 text-stroke-2 text-stroke-red-400">
                         Convivial Futures
                     </h1>
                     <TextEffect
-                        className="text-lg md:text-3xl text-black"
+                        className="text-lg md:text-3xl text-secondary"
                         as="h2"
                         preset="slide"
                         delay={3.5}

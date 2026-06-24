@@ -14,6 +14,10 @@
     font-family: var(--font-bowlby);
 }
 
+.font-canela {
+    font-family: var(--font-canela);
+}
+
 /* Utility classes for common font combinations */
 .heading-bowlby {
     font-family: var(--font-bowlby);
