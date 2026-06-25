@@ -42,7 +42,7 @@ export default function About() {
                     <CustomParagraph
                         text="Convivial Futures is an institution engaged in thinking, designing, and complex problem solving to address present and futures challenges. Its focus is on the macro level—society and civilisation—especially on methodological and praxeological approaches that enhance human and ecological flourishing."
 
-                        className="text-3xl sm:text-2xl font-semibold tracking-wide leading-relaxed"
+                        className="text-3xl sm:text-2xl tracking-wide leading-relaxed"
                     />
                 </motion.div>
 
@@ -66,7 +66,7 @@ export default function About() {
                 <motion.div variants={item} className="space-y-2">
                     <CustomParagraph
                         text="We value interdisciplinarity, where collective knowledge across discipline forms our foundation, primarily through the fusion of Science, Technology, and Society (STS), Futures Studies, Transformative Design, and Development Studies. That is why Multidimensional Ninjas exist ! ;)"
-                        className="text-3xl sm:text-2xl font-semibold tracking-wide leading-relaxed"
+                        className="text-3xl sm:text-2xl tracking-wide leading-relaxed"
                     />
                 </motion.div>
 
