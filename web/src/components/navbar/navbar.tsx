@@ -26,7 +26,7 @@ export default function Navbar() {
 
     return (
         <header
-            className={`fixed top-0 right-0 left-0 z-50 border-b px-4 transition-colors duration-300 md:px-6 ${
+            className={`font-inter fixed top-0 right-0 left-0 z-50 border-b px-4 transition-colors duration-300 md:px-6 ${
                 scrolled ? 'bg-background/50 backdrop-blur-md' : 'border-transparent bg-transparent'
             }`}
         >
@@ -64,7 +64,7 @@ export default function Navbar() {
                                 </svg>
                             </Button>
                         </PopoverTrigger>
-                        <PopoverContent align="start" className="w-36 p-1 md:hidden">
+                        <PopoverContent align="start" className="font-inter w-36 p-1 md:hidden">
                             <NavigationMenu className="max-w-none *:w-full">
                                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                                     {navigationLinks.map((link, index) => (
@@ -79,7 +79,7 @@ export default function Navbar() {
                         </PopoverContent>
                     </Popover>
                     {/* Logo */}
-                    <a href="/" className="font-bowlby text-primary text-stroke text-stroke-red-400 text-2xl  max-sm:hidden">
+                    <a href="/" className="font-bowlby text-border text-2xl  max-sm:hidden">
                         Convivial Futures
                     </a>
                 </div>

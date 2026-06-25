@@ -46,7 +46,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(83.275% 0.17151 82.058);
+    --primary: oklch(85.881% 0.16339 86.676);
     --primary-foreground: oklch(0 0 0);
     --secondary: oklch(0.7686 0.0973 228.5561);
     --secondary-foreground: oklch(0.205 0 0);
@@ -72,7 +72,7 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
-    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    --font-sans: var(--font-canela), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
@@ -130,7 +130,7 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(0.275 0 0);
     --sidebar-ring: oklch(0.439 0 0);
-    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    --font-sans: var(--font-canela), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
@@ -206,6 +206,7 @@
     --shadow-2xl: var(--shadow-2xl);
 
     --animate-bounce-soft: bounce-soft 1s infinite;
+    --animate-float: float 3s ease-in-out infinite;
 
     @keyframes bounce-soft {
         0%,
@@ -216,6 +217,16 @@
         50% {
             transform: translateY(0);
             animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
         }
     }
 }
@@ -232,3 +243,26 @@
         scroll-behavior: smooth;
     }
 }
+
+/* Lenis smooth scrolling integration styles */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+

@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/ui/text-effect";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import CustomText from "../custom-text";
 
 export default function Hero() {
     const leftRef = useRef(null);
@@ -45,13 +44,13 @@ export default function Hero() {
     return (
         <section className="flex flex-col relative">
             {/* Hero */}
-            <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/wth-bg-revision.jpg')] bg-cover bg-center">
-                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary font-black ">
-                    <h1 className="text-5xl md:text-8xl mb-6 text-stroke-2 text-stroke-red-400">
+            <div className="relative flex h-screen justify-center bg-[url('/assets/wth-bg/wth-bg.png')] bg-cover bg-center">
+                <div className="absolute top-1/5 max-w-7xl text-center font-bowlby text-primary  ">
+                    <h1 className="text-5xl md:text-8xl mb-6 text-shadow-border text-shadow-sm tracking-wide animate-bounce-soft">
                         Convivial Futures
                     </h1>
                     <TextEffect
-                        className="text-lg md:text-3xl text-secondary"
+                        className="text-3xl md:text-4xl text-secondary font-canela font-bold text-shadow-xs"
                         as="h2"
                         preset="slide"
                         delay={3.5}
@@ -79,9 +78,9 @@ export default function Hero() {
                 </motion.div>
             </div>
 
-            <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/5.png')] bg-[size:100%_auto] bg-repeat-y">
+            <div className="h-screen  relative overflow-clip pb-5 bg-[url('/assets/wth-bg/wth-body.png')] bg-[size:100%_auto] bg-repeat-y">
                 <motion.h1
-                    className="sticky top-1/2 z-10 tracking-wider text-center text-3xl sm:text-5xl font-bowlby text-primary mt-30 text-stroke-2 text-stroke-red-400 font-black"
+                    className="sticky top-1/2 z-10 tracking-wider text-center text-3xl sm:text-5xl font-bowlby text-secondary mt-30 font-black"
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}

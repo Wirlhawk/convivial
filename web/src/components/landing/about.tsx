@@ -30,7 +30,7 @@ export default function About() {
     };
 
     return (
-        <section className="min-h-screen py-20 px-10 mx-auto flex flex-col justify-center overflow-hidden gap-10 bg-[url('/assets/wth-bg/5.png')] bg-[size:100%_auto] bg-repeat-y ">
+        <section className="min-h-screen pb-20 px-10 mx-auto flex flex-col justify-center overflow-hidden gap-10 bg-[url('/assets/wth-bg/wth-body.png')] bg-[size:100%_auto] bg-repeat-y ">
             <motion.div
                 className="flex w-full max-w-7xl mx-auto gap-5 lg:gap-10 flex-col-reverse lg:flex-row overflow items-center"
                 variants={container}
@@ -40,18 +40,19 @@ export default function About() {
             >
                 <motion.div variants={item} className="space-y-2">
                     <CustomParagraph
-                        text="Convivial Futures is an institution engaged in thinking, designing, and complex problem solving to address present and futures challenges. Its focus is on the macro level —society and civilization—especially on methodological and praxeological approaches that enhance human and ecological flourishing. "
-                        className="text-2xl sm:text-xl font-semibold tracking-wide leading-relaxed text-justify"
+                        text="Convivial Futures is an institution engaged in thinking, designing, and complex problem solving to address present and futures challenges. Its focus is on the macro level—society and civilisation—especially on methodological and praxeological approaches that enhance human and ecological flourishing."
+
+                        className="text-3xl sm:text-2xl font-semibold tracking-wide leading-relaxed"
                     />
                 </motion.div>
 
                 <motion.img
-                    width={300}
-                    height={300}
+                    width={400}
+                    height={400}
                     alt=""
                     src={"/assets/wth-bg/wth-1.png"}
                     variants={item}
-                    className="aspect-square object-cover mx-auto lg:ml-auto h-fit max-w-96"
+                    className="aspect-square object-cover mx-auto lg:ml-auto h-fit max-w-96 animate-float"
                 />
             </motion.div>
 
@@ -64,14 +65,14 @@ export default function About() {
             >
                 <motion.div variants={item} className="space-y-2">
                     <CustomParagraph
-                        text="We value interdisciplinarity, where collective knowledge across disciplines forms our foundation, primarily through the fusion of Science, Technology, and Society (STS), Futures Studies, Transformative Design, and Development Studies (i.e., decoloniality). That is why ‘multidimensional ninjas’ exist ! ;-)"
-                        className="text-2xl sm:text-xl font-semibold tracking-wide leading-relaxed text-justify"
+                        text="We value interdisciplinarity, where collective knowledge across discipline forms our foundation, primarily through the fusion of Science, Technology, and Society (STS), Futures Studies, Transformative Design, and Development Studies. That is why Multidimensional Ninjas exist ! ;)"
+                        className="text-3xl sm:text-2xl font-semibold tracking-wide leading-relaxed"
                     />
                 </motion.div>
 
                 <motion.img
-                    width={300}
-                    height={300}
+                    width={400}
+                    height={400}
                     alt=""
                     src={"/assets/wth-bg/wth-2.png"}
                     variants={item}

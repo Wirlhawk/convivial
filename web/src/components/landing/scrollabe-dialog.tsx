@@ -49,7 +49,7 @@ export default function ScrollableDialog({
                         >
                             <header className="px-8 py-8 text-center">
                                 <DialogHeader className="">
-                                    <DialogTitle className="text-balance text-3xl md:text-4xl font-extrabold uppercase tracking-wide font-bowlby">
+                                    <DialogTitle className="text-balance text-2xl md:text-3xl font-extrabold uppercase tracking-wide font-bowlby">
                                         {post.title || "THE MAGICAL<br />CAPE WHEEL"}
                                     </DialogTitle>
                                 </DialogHeader>
@@ -60,12 +60,12 @@ export default function ScrollableDialog({
                                 <img 
                                     src={post.image.url || "/assets/ninjas/1.png"} 
                                     alt={post.title || "Post image"} 
-                                    className="w-full h-64 object-cover rounded-md"
+                                    className="w-full h-64 object-cover"
                                 />
                             </div>
 
                             <div className="px-10 pt-6 pb-16">
-                                <p className="text-pretty leading-relaxed text-foreground/80">
+                                <p className="text-pretty leading-relaxed text-foreground/80 text-xl">
                                     {post.description}
                                 </p>
                             </div>

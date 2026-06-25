@@ -58,12 +58,11 @@ export default function RootLayout({
                 sizes="<generated>"
             />
             <body
-                className={`${inter.className} ${BowlbyOne.variable} antialiased`}
+                className={`${canelaText.className} ${canelaText.variable} ${BowlbyOne.variable} ${inter.variable} antialiased`}
             >
                 <QueryProvider>
                     <Navbar />
-                    {/* <SmoothScroll>{children}</SmoothScroll> */}
-                    {children}
+                    <SmoothScroll>{children}</SmoothScroll>
                     <Toaster />
                 </QueryProvider>
             </body>

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import NinjaAnimation from './NinjaAnimation';
+import { TextShimmerWave } from '@/components/ui/text-shimmer-wave';
 
 interface LoadingOverlayProps {
   children: React.ReactNode;
@@ -41,14 +42,13 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
               className="w-96 h-96 sm:w-128 sm:h-128 object-contain"
             />
 
-            <motion.div 
-              className="text-xl sm:text-4xl font-bowlby tracking-wide text-stroke-2 font-bold text-stroke-red-400 text-primary" // Removed absolute positioning, added top margin for spacing
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
+            <TextShimmerWave
+              className="text-xl sm:text-4xl font-bowlby tracking-wide font-bold [--base-color:var(--primary)] [--base-gradient-color:var(--secondary)] dark:[--base-color:var(--primary)] dark:[--base-gradient-color:var(--secondary)]"
+              duration={2}
+              spread={2}
             >
               Entering another dimension...
-            </motion.div>
+            </TextShimmerWave>
           </motion.div>
         )}
       </AnimatePresence>
