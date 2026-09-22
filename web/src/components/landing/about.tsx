@@ -63,7 +63,7 @@ export default function About() {
                         <motion.div variants={item} className="space-y-2">
                             <CustomParagraph
                                 text={aboutItem.description}
-                                className="text-3xl sm:text-2xl font-semibold tracking-wide leading-relaxed"
+                                className="text-3xl sm:text-2xl tracking-wide leading-relaxed"
                             />
                         </motion.div>
 
