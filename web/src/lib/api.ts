@@ -55,6 +55,14 @@ export interface About {
     createdAt: string;
 }
 
+export interface AboutContent {
+    _id: string;
+    id: string;
+    description: string;
+    image: { url: string | null };
+    sortOrder: number;
+}
+
 // Raw Sanity response types
 interface SanityPost {
     _id: string;
@@ -86,6 +94,13 @@ interface SanityAbout {
     image?: { asset: { _ref: string } };
     content?: any[];
     _createdAt: string;
+}
+
+interface SanityAboutContent {
+    _id: string;
+    description: string;
+    image?: { asset: { _ref: string } };
+    sortOrder: number;
 }
 
 // Transform Sanity image to url format
@@ -159,6 +174,20 @@ const ABOUT_BY_ID_QUERY = `*[_type == "about" && _id == $id][0] {
     image,
     content,
     _createdAt
+}`;
+
+const ABOUT_CONTENTS_QUERY = `*[_type == "aboutContent"] | order(sortOrder asc) {
+    _id,
+    description,
+    image,
+    sortOrder
+}`;
+
+const ABOUT_CONTENT_BY_ID_QUERY = `*[_type == "aboutContent" && _id == $id][0] {
+    _id,
+    description,
+    image,
+    sortOrder
 }`;
 
 // API response wrapper to match Strapi format
@@ -285,6 +314,32 @@ export const api = {
                     image: transformImage(about.image),
                     content: about.content || [],
                     createdAt: about._createdAt,
+                },
+            };
+        },
+    },
+    aboutContent: {
+        getAll: async (): Promise<ApiResponse<AboutContent[]>> => {
+            const items = await client.fetch<SanityAboutContent[]>(ABOUT_CONTENTS_QUERY);
+            return {
+                data: items.map((item) => ({
+                    _id: item._id,
+                    id: item._id,
+                    description: item.description,
+                    image: transformImage(item.image),
+                    sortOrder: item.sortOrder,
+                })),
+            };
+        },
+        getById: async (id: string): Promise<ApiResponse<AboutContent>> => {
+            const item = await client.fetch<SanityAboutContent>(ABOUT_CONTENT_BY_ID_QUERY, { id });
+            return {
+                data: {
+                    _id: item._id,
+                    id: item._id,
+                    description: item.description,
+                    image: transformImage(item.image),
+                    sortOrder: item.sortOrder,
                 },
             };
         },

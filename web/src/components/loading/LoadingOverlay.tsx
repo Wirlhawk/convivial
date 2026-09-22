@@ -42,7 +42,7 @@ const LoadingOverlay: React.FC<LoadingOverlayProps> = ({ children }) => {
               className="w-96 h-96 sm:w-128 sm:h-128 object-contain"
             />
 
-            <TextShimmerWave
+            <TextShimmerWave  
               className="text-xl sm:text-4xl font-bowlby tracking-wide font-bold [--base-color:var(--primary)] [--base-gradient-color:var(--secondary)] dark:[--base-color:var(--primary)] dark:[--base-gradient-color:var(--secondary)]"
               duration={2}
               spread={2}
