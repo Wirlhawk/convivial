@@ -60,7 +60,7 @@ export default function About() {
                         whileInView="visible"
                         viewport={{ amount: 0.5, once: true }}
                     >
-                        <motion.div variants={item} className="space-y-2">
+                        <motion.div variants={item} className="flex-1 w-full space-y-2">
                             <CustomParagraph
                                 text={aboutItem.description}
                                 className="text-3xl sm:text-2xl tracking-wide leading-relaxed"
@@ -74,7 +74,7 @@ export default function About() {
                                 alt=""
                                 src={aboutItem.image.url}
                                 variants={item}
-                                className={`aspect-square object-cover mx-auto lg:ml-auto h-fit max-w-96 ${
+                                className={`aspect-square object-cover shrink-0 mx-auto lg:mx-0 h-fit max-w-96 ${
                                     isEven ? "animate-float" : ""
                                 }`}
                             />
